@@ -6,34 +6,35 @@ export default function ScaleWithUraan({ onCtaClick: _onCtaClick }: { onCtaClick
     <>
       <section id="partners" className="w-full bg-black">
         <div className="relative w-full h-[185px] md:h-[400px] overflow-hidden">
+          {/* Background image */}
           <img src={bg} alt="" className="absolute inset-0 h-full w-full object-cover" draggable={false} />
           <div className="absolute inset-0 bg-black/65" />
 
-          <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-4 md:px-6">
-            <h2 className="font-roboto-condensed font-bold uppercase leading-[1] tracking-[0.01em] text-white text-[22px] md:text-[60px]">
-              READY TO SCALE WITH URAAN?
-            </h2>
+          {/* Centered content */}
+          <div className="relative z-10 h-full w-full flex flex-col justify-between text-center px-4 md:px-6 py-6 md:py-10">
+            {/* Heading */}
+            <div className="pt-6 md:pt-10">
+              <h2 className="font-roboto-condensed font-bold uppercase leading-[1] tracking-[0.01em] text-white text-[22px] md:text-[60px]">
+                READY TO SCALE WITH URAAN?
+              </h2>
 
-            <div className="mt-4 md:mt-6 flex flex-col items-center gap-2 md:gap-3 w-full">
-              <span className="font-urbanist font-[700] uppercase leading-[1] tracking-[0.01em] text-white/90 text-[16px] md:text-[40px]">
-                SUPPORTED BY
-              </span>
+            <span className="mt-2 md:mt-4 block font-urbanist font-[700] uppercase leading-[1] tracking-[0.01em] text-white/90 text-[16px] md:text-[40px]">
+              SUPPORTED BY
+            </span>
+            </div>
 
-              {/* ✅ Continuous logo loop */}
-              <div className="mt-2 md:mt-6 w-full overflow-hidden">
-                <div className="marquee">
-                  <div className="track">
-                    {Array.from({ length: 10 }).map((_, i) => (
-                      <img key={`a-${i}`} src={logo} alt="Partner logo" className="logo" draggable={false} />
-                    ))}
-                    {/* duplicate sequence to ensure seamless wrap */}
-                    {Array.from({ length: 10 }).map((_, i) => (
-                      <img key={`b-${i}`} src={logo} alt="" className="logo" draggable={false} />
-                    ))}
-                  </div>
+            {/* ✅ Logo slider shifted near section bottom */}
+            <div className="mt-4 md:mt-10 mb-2 md:mb-4 w-full overflow-hidden">
+              <div className="marquee">
+                <div className="track">
+                  {Array.from({ length: 10 }).map((_, i) => (
+                    <img key={`a-${i}`} src={logo} alt="Partner logo" className="logo" draggable={false} />
+                  ))}
+                  {Array.from({ length: 10 }).map((_, i) => (
+                    <img key={`b-${i}`} src={logo} alt="Partner logo duplicate" className="logo" draggable={false} />
+                  ))}
                 </div>
               </div>
-              {/* ⬆️ End slider */}
             </div>
           </div>
 
@@ -44,12 +45,12 @@ export default function ScaleWithUraan({ onCtaClick: _onCtaClick }: { onCtaClick
       <style>{`
         :root {
           --gap: 1.5rem;
-          --speed: 12s; /* faster speed */
+          --speed: 60s;
         }
 
         @keyframes scrollLoop {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-51%); } /* move slightly more than 50% for overlap */
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-51%); }
         }
 
         .marquee {
@@ -67,13 +68,18 @@ export default function ScaleWithUraan({ onCtaClick: _onCtaClick }: { onCtaClick
         }
 
         .logo {
-          height: 18px;
+          height: 25px;
           flex: 0 0 auto;
           object-fit: contain;
+          filter: brightness(100%);
         }
 
         @media (min-width: 768px) {
-          .logo { height: 34px; }
+          .logo { height: 45px; }
+        }
+
+        .marquee:hover .track {
+          animation-play-state: paused;
         }
       `}</style>
     </>
