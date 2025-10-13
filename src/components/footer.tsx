@@ -121,7 +121,7 @@ export default function Footer() {
             </div>
 
             <p className="text-sm md:text-base text-right w-full border-t border-black/10 pt-4">
-              © 2025 <span className="font-semibold">Branding2go</span>. All Rights Reserved.
+              © 2025 <span className="font-semibold">Uraanvc</span> Powered by <span className="font-semibold">Branding2go</span>. All Rights Reserved.
             </p>
           </div>
         </div>
