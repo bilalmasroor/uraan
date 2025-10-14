@@ -45,7 +45,7 @@ export default function ScaleWithUraan({ onCtaClick: _onCtaClick }: { onCtaClick
       <style>{`
         :root {
           --gap: 1.5rem;
-          --speed: 60s;
+          --speed: 80s;
         }
 
         @keyframes scrollLoop {
@@ -75,7 +75,7 @@ export default function ScaleWithUraan({ onCtaClick: _onCtaClick }: { onCtaClick
         }
 
         @media (min-width: 768px) {
-          .logo { height: 45px; }
+          .logo { height: 70px; }
         }
 
         .marquee:hover .track {
