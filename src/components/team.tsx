@@ -7,7 +7,7 @@ export default function MeetTheTeam() {
     name: "Nauman Aftab",
     role: "Co-Founder / GP",
     img: team1,
-    linkedin: "https://linkedin.com/in/nauman-aftab",
+    linkedin: "https://www.linkedin.com/in/naumanaftab/",
   };
 
   return (
